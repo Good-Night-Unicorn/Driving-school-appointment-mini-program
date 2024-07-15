@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.KaoshixinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.KaoshixinxiEntity" id="kaoshixinxiMap">
+        <result property="kemubianhao" column="kemubianhao"/>
+        <result property="kemumingcheng" column="kemumingcheng"/>
+        <result property="kemufenlei" column="kemufenlei"/>
+        <result property="tupian" column="tupian"/>
+        <result property="kaoshifei" column="kaoshifei"/>
+        <result property="kemuneirong" column="kemuneirong"/>
+        <result property="jiaolianzhanghao" column="jiaolianzhanghao"/>
+        <result property="jiaolianxingming" column="jiaolianxingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.KaoshixinxiVO" >
+		SELECT * FROM kaoshixinxi  kaoshixinxi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.KaoshixinxiVO" >
+		SELECT  kaoshixinxi.* FROM kaoshixinxi  kaoshixinxi
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.KaoshixinxiView" >
+
+		SELECT  kaoshixinxi.* FROM kaoshixinxi  kaoshixinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.KaoshixinxiView" >
+		SELECT * FROM kaoshixinxi  kaoshixinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
